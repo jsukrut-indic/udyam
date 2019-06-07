@@ -1,0 +1,14 @@
+[
+ {
+  "country": "India", 
+  "docstatus": 0, 
+  "doctype": "Address Template", 
+  "is_default": 1, 
+  "modified": "2019-03-18 15:31:52.563445", 
+  "name": "India", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "template": "{{ address_line1 }}<br>{% if address_line2 %}{{ address_line2 }}<br>{% endif -%}{{ city }}<br>\n{% if state %}{{ state }}<br>{% endif -%}\n{% if pincode %}{{ pincode }}<br>{% endif -%}\n{{ country }}<br>\n{% if phone %}Phone: {{ phone }}<br>{% endif -%}\n{% if fax %}Fax: {{ fax }}<br>{% endif -%}\n{% if email_id %}Email: {{ email_id }}<br>{% endif -%}"
+ }
+]
