@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include udyam *.css
+recursive-include udyam *.csv
+recursive-include udyam *.html
+recursive-include udyam *.ico
+recursive-include udyam *.js
+recursive-include udyam *.json
+recursive-include udyam *.md
+recursive-include udyam *.png
+recursive-include udyam *.py
+recursive-include udyam *.svg
+recursive-include udyam *.txt
+recursive-exclude udyam *.pyc
