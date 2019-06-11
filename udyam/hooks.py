@@ -120,4 +120,14 @@ app_license = "MIT"
 # 	"frappe.desk.doctype.event.event.get_events": "udyam.event.get_events"
 # }
 
+doctype_js = { 
+	"Supplier" : "custom_script/supplier/supplier.js",
+}
+
 fixtures = ["Custom Field", "Property Setter","Role","Custom DocPerm","Print Format", "Letter Head", "Workflow State", "Workflow Action", "Workflow", "Address Template","Web Page"]
+
+doc_events = {
+	"Supplier": {
+        "validate": "udyam.custom_script.supplier.supplier.validate",
+    },
+}
