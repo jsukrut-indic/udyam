@@ -124,7 +124,7 @@ doctype_js = {
 	"Supplier" : "custom_script/supplier/supplier.js",
 }
 
-fixtures = ["Custom Field", "Property Setter","Role","Custom DocPerm","Print Format", "Letter Head", "Workflow State", "Workflow Action", "Workflow", "Address Template","Web Page"]
+fixtures = ["Custom Field", "Property Setter","Role","Custom DocPerm","Print Format", "Letter Head", "Workflow State", "Workflow Action", "Workflow", "Address Template","Web Page","Report"]
 
 doc_events = {
 	"Supplier": {

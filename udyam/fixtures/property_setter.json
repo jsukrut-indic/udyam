@@ -1878,5 +1878,25 @@
   "property": "read_only_onload", 
   "property_type": "Check", 
   "value": null
+ }, 
+ {
+  "_assign": null, 
+  "_comments": null, 
+  "_liked_by": null, 
+  "_user_tags": null, 
+  "default_value": null, 
+  "doc_type": "Purchase Invoice", 
+  "docstatus": 0, 
+  "doctype": "Property Setter", 
+  "doctype_or_field": "DocType", 
+  "field_name": null, 
+  "modified": "2019-06-13 09:09:35.740727", 
+  "name": "Purchase Invoice-read_only_onload", 
+  "parent": null, 
+  "parentfield": null, 
+  "parenttype": null, 
+  "property": "read_only_onload", 
+  "property_type": "Check", 
+  "value": null
  }
 ]
