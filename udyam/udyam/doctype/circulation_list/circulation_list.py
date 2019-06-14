@@ -24,7 +24,6 @@ class CirculationList(Document):
 			make_po_from_circulation_list(self.name)
 
 
-
 @frappe.whitelist()
 def make_circulation_details_records(name):
 	if name:

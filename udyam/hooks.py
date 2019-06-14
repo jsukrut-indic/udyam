@@ -122,6 +122,7 @@ app_license = "MIT"
 
 doctype_js = { 
 	"Supplier" : "custom_script/supplier/supplier.js",
+	"Purchase Invoice":"custom_script/purchase_invoice/purchase_invoice.js"
 }
 
 fixtures = ["Custom Field", "Property Setter","Role","Custom DocPerm","Print Format", "Letter Head", "Workflow State", "Workflow Action", "Workflow", "Address Template","Web Page","Report"]
