@@ -12,7 +12,18 @@ def get_data():
 					"type": "doctype",
 					"name": "Magazine Details",
 					"description": _("Magazine Details"),
+				},
+				{
+					"type": "doctype",
+					"name": "Circulation List",
+					"description": _("Circulation List"),
 				},	
+				{
+					"type": "doctype",
+					"name": "Circulation Details",
+					"description": _("Circulation Details"),
+				},
+
 			]
 		},
 		{

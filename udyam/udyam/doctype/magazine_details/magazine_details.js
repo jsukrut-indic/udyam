@@ -6,6 +6,7 @@ frappe.ui.form.on('Magazine Details', {
 		if(frm.doc.__islocal){
 			frm.set_df_property("customer","read_only",1);
 		}
+		
 
 	},
 	category:function(frm){
