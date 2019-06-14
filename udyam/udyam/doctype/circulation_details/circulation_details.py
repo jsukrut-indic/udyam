@@ -59,7 +59,7 @@ def make_dn(circulation_details):
 		circulation_details_doc.delivery_note = dn.name
 		circulation_details_doc.has_delivery_note =1
 		circulation_details_doc.save()
-		circulation_list_doc = frappe.get_doc("Circulation List",circulation_details.get('circulation_list'))
+		circulation_list_doc = frappe.get_doc("Circulation List",circulation_details_doc.circulation_list)
 		circulation_list_doc.delivered_qty = float(circulation_list_doc.delivered_qty) + float(circulation_details_doc.qty)
 		circulation_list_doc.save()
 		frappe.db.commit()
