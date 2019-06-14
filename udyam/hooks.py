@@ -120,9 +120,11 @@ app_license = "MIT"
 # 	"frappe.desk.doctype.event.event.get_events": "udyam.event.get_events"
 # }
 
-doctype_js = { 
+doctype_js = {
+	"Customer" : "custom_script/customer/customer.js",
 	"Supplier" : "custom_script/supplier/supplier.js",
 	"Purchase Invoice":"custom_script/purchase_invoice/purchase_invoice.js"
+
 }
 
 fixtures = ["Custom Field", "Property Setter","Role","Custom DocPerm","Print Format", "Letter Head", "Workflow State", "Workflow Action", "Workflow", "Address Template","Web Page","Report"]
