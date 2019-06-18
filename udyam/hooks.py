@@ -95,7 +95,7 @@ app_license = "MIT"
 # 		"udyam.tasks.all"
 # 	],
 # 	"daily": [
-# 		"udyam.tasks.daily"
+# 		"udyam.udyam.doctype.circulation_list.circulation_list.circulation_details_scheduler"
 # 	],
 # 	"hourly": [
 # 		"udyam.tasks.hourly"
@@ -120,6 +120,24 @@ app_license = "MIT"
 # 	"frappe.desk.doctype.event.event.get_events": "udyam.event.get_events"
 # }
 
+scheduler_events = {
+	# "all": [
+	# 	"udyam.tasks.all"
+	# ],
+	"daily": [
+		"udyam.udyam.doctype.circulation_list.circulation_list.circulation_details_scheduler"
+	],
+	# "hourly": [
+	# 	"udyam.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"udyam.tasks.weekly"
+	# ]
+	# "monthly": [
+	# 	"udyam.tasks.monthly"
+	# ]
+}
+
 doctype_js = {
 	"Customer" : "custom_script/customer/customer.js",
 	"Supplier" : "custom_script/supplier/supplier.js",
@@ -127,10 +145,11 @@ doctype_js = {
 
 }
 
-fixtures = ["Custom Field", "Property Setter","Role","Custom DocPerm","Print Format", "Letter Head", "Workflow State", "Workflow Action", "Workflow", "Address Template","Web Page","Report"]
+fixtures = ["Custom Field", "Property Setter","Custom DocPerm","Print Format", "Letter Head", "Workflow State", "Workflow Action", "Workflow", "Address Template","Web Page","Report"]
 
 doc_events = {
 	"Supplier": {
         "validate": "udyam.custom_script.supplier.supplier.validate",
     },
+   
 }

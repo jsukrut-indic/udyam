@@ -18,12 +18,35 @@ class CirculationList(Document):
 	
 	def validate(self):
 		pass
-	def after_insert(self):
-		result = make_circulation_details_records(self.name)
-		if result:
-			make_po_from_circulation_list(self.name)
+		
 
+	
 
+@frappe.whitelist()
+def circulation_details_scheduler():
+	try:
+		create_enqueue_job()
+		print "__Shedular Executed"
+	except Exception, e:
+		error_trace = frappe.get_traceback()
+		if error_trace:
+			error_log_doc = frappe.log_error(error_trace)
+		return False
+
+@frappe.whitelist()
+def create_enqueue_job():
+	first_date_of_month = get_first_day(getdate())
+	last_date_of_month = get_last_day(getdate())
+	circulation_lists = frappe.db.sql(""" select name from `tabCirculation List` where final_closure = 0 and and details_created = 0 and posting_date between 
+										'{0}' and '{1}  '""".format(first_date_of_month,last_date_of_month),as_dict=1,debug =1)
+	if circulation_lists:
+		for circulation_list in circulation_lists:
+			circulation_list_doc = frappe.get_doc("Circulation List",circulation_list.get('name'))
+			if circulation_list_doc.name:
+				result = make_circulation_details_records(circulation_list_doc.name)
+				if result:
+					make_po_from_circulation_list(circulation_list_doc.name)
+	
 @frappe.whitelist()
 def make_circulation_details_records(name):
 	if name:
@@ -37,6 +60,8 @@ def make_circulation_details_records(name):
 					create_circulation_details(circulation_list_doc,customer_data)
 			except Exception, e:
 				return False
+			circulation_list_doc.details_created = 1
+			circulation_list_doc.save()
 			return True
 
 @frappe.whitelist()

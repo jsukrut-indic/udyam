@@ -16,8 +16,9 @@ def execute(filters=None):
 def get_data(filters):
 	if filters:
 		circulation_list = filters['circulation_list']
-		data = frappe.db.sql(""" SELECT CL.name, CD.name,CD.customer,CD.customer_name,"","","","",
-							CD.qty,CD.tracking_id,CD.booking_status,CD.transaction_date,CD.transaction_status
+		data = frappe.db.sql(""" SELECT CL.name, CD.name,CD.customer,CD.customer_name,CD.company_name,CD.address,
+							CD.address_title,CD.address_line1,CD.city,CD.state,CD.pincode,CD.phone,CD.qty,CD.tracking_id,
+							CD.booking_status,CD.transaction_date,CD.delivery_date,CD.transaction_status
 							FROM `tabCirculation List` CL
 							INNER JOIN `tabCirculation Details` CD
 							ON CL.name =CD.circulation_list
@@ -54,8 +55,32 @@ def get_columns():
 			"width": 100
 		},
 		{
+			"fieldname": "company_name",
+			"label": _("Company Name"),
+			"fieldtype": "Data",
+			"width": 100
+		},
+		{
 			"fieldname": "address",
 			"label": _("Address"),
+			"fieldtype": "data",
+			"width": 90
+		},
+		{
+			"fieldname": "address_title",
+			"label": _("Address Title"),
+			"fieldtype": "data",
+			"width": 90
+		},
+		{
+			"fieldname": "address_line1",
+			"label": _("Address Line 1"),
+			"fieldtype": "data",
+			"width": 90
+		},
+		{
+			"fieldname": "city",
+			"label": _("City"),
 			"fieldtype": "data",
 			"width": 90
 		},
@@ -84,20 +109,26 @@ def get_columns():
 			"width": 170
 		},
 		{
-			"fieldname": "Tracking Id",
-			"label": _("tracking_id"),
+			"fieldname": "tracking_id",
+			"label": _("Tracking id"),
 			"fieldtype": "Data",
 			"width": 170
 		},
 		{
 			"fieldname": "booking_status",
-			"label": _("booking_status"),
+			"label": _("Booking Status"),
 			"fieldtype": "Data",
 			"width": 170
 		},
 		{
-			"fieldname": "Transaction Date",
-			"label": _("transaction_date"),
+			"fieldname": "transaction_date",
+			"label": _("Transaction Date"),
+			"fieldtype": "Date",
+			"width": 170
+		},
+		{
+			"fieldname": "delivery_date",
+			"label": _("Delivery Date"),
 			"fieldtype": "Date",
 			"width": 170
 		},
