@@ -37,8 +37,8 @@ def circulation_details_scheduler():
 def create_enqueue_job():
 	first_date_of_month = get_first_day(getdate())
 	last_date_of_month = get_last_day(getdate())
-	circulation_lists = frappe.db.sql(""" select name from `tabCirculation List` where final_closure = 0 and and details_created = 0 and posting_date between 
-										'{0}' and '{1}  '""".format(first_date_of_month,last_date_of_month),as_dict=1,debug =1)
+	circulation_lists = frappe.db.sql(""" select name from `tabCirculation List` where final_closure = 0 and details_created = 0 and posting_date between 
+										'{0}' and '{1}  '""".format(first_date_of_month,last_date_of_month),as_dict=1)
 	if circulation_lists:
 		for circulation_list in circulation_lists:
 			circulation_list_doc = frappe.get_doc("Circulation List",circulation_list.get('name'))
