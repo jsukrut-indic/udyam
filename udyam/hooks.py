@@ -121,12 +121,12 @@ app_license = "MIT"
 # }
 
 scheduler_events = {
-	# "all": [
-	# 	"udyam.tasks.all"
-	# ],
-	"daily": [
+	"all": [
 		"udyam.udyam.doctype.circulation_list.circulation_list.circulation_details_scheduler"
 	],
+	# "daily": [
+	# 	"udyam.udyam.doctype.circulation_list.circulation_list.circulation_details_scheduler"
+	# ],
 	# "hourly": [
 	# 	"udyam.tasks.hourly"
 	# ],
