@@ -124,9 +124,9 @@ scheduler_events = {
 	"all": [
 		"udyam.udyam.doctype.circulation_list.circulation_list.circulation_details_scheduler"
 	],
-	# "daily": [
-	# 	"udyam.udyam.doctype.circulation_list.circulation_list.circulation_details_scheduler"
-	# ],
+	"daily": [
+		"udyam.udyam.doctype.circulation_details.circulation_details.create_delivery_note"
+	],
 	# "hourly": [
 	# 	"udyam.tasks.hourly"
 	# ],
