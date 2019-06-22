@@ -62,6 +62,7 @@ def make_circulation_details_records(name):
 				return False
 			circulation_list_doc.details_created = 1
 			circulation_list_doc.save()
+			frappe.db.commit()
 			return True
 
 @frappe.whitelist()
